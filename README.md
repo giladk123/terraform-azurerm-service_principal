@@ -35,7 +35,7 @@ module "service-principal" {
 }
 
 ```
-add data source for the scope value 
+
 
 Example of the service-principal.json : 
 
@@ -46,13 +46,13 @@ Example of the service-principal.json :
       "name": "<service principal name>",
       "owner_username": "<user principal id>",
       "client_secret_name": "<client secret name>",
-      "secret_rotation_days": <number>
+      "secret_rotation_days": <365>
     },
     {
-      "name": "<service principal name>,
+      "name": "<service principal name>",
       "owner_username": "<user principal id>",
       "client_secret_name": "<client secret name>",
-      "secret_rotation_days": <number>
+      "secret_rotation_days": <365>
     }
   ]
 ```
