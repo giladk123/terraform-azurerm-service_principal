@@ -33,7 +33,7 @@ resource "time_rotating" "year" {
 }
 
 resource "azuread_service_principal_password" "application" {
-  for_each             = { for sp in var.service_principals : sp.name => sp }
+  for_each = { for sp in var.service_principals : sp.name => sp }
   #display_name         = each.value.app_password_name
   service_principal_id = azuread_service_principal.sp[each.key].object_id
   rotate_when_changed = {
