@@ -2,6 +2,8 @@
 
 add locals with service principal and role assignment:
 
+```terraform
+
 locals {
   service-principal = jsondecode(file("./ccoe/service-principal.json"))
   assignments = [
@@ -18,7 +20,11 @@ locals {
   ]
 }
 
+```
+
 add module : 
+
+```terraform
 
 module "service-principal" {
   source = "./module/service-principal"
@@ -28,9 +34,12 @@ module "service-principal" {
 
 }
 
+```
 add data source for the scope value 
 
 Example of the service-principal.json : 
+
+```json
 
 [
     {
@@ -46,7 +55,7 @@ Example of the service-principal.json :
       "secret_rotation_days": <number>
     }
   ]
-
+```
 
 ## Requirements
 
